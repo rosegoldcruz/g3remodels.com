@@ -1,6 +1,7 @@
 {
   "name": "g3-contracting-website",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "G3 Contracting - Family-owned home remodeling company since 2003",
   "private": true,
   "scripts": {
     "build": "next build",
