@@ -1,54 +1,28 @@
-import { BubbleMenu } from "@/components/bubble-menu"
-import { LightRays } from "@/components/light-rays"
+"use client"
+
+import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { IntroSection } from "@/components/intro-section"
 import { AboutSection } from "@/components/about-section"
-import { WhyChooseSection } from "@/components/why-choose-section"
-import { ServicesGrid } from "@/components/services-grid"
-import { AvailableHomesSection } from "@/components/available-homes-section"
-import { AboutGrid } from "@/components/about-grid"
-import { ContactForm } from "@/components/contact-form"
+import { StatsSection } from "@/components/stats-section"
+import { LuxuryGallery } from "@/components/luxury-gallery"
 import { Footer } from "@/components/footer"
 
-const navItems = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-]
-
 export default function Home() {
+  const galleryItems = [
+    { src: "/1.jpeg", alt: "Luxury Kitchen 1", title: "Fusion Shaker", cols: "col-span-2 row-span-2" },
+    { src: "/2.jpeg", alt: "Luxury Kitchen 2", title: "Slab Minimalist", cols: "col-span-1" },
+    { src: "/3.jpeg", alt: "Luxury Kitchen 3", title: "Modern Elegance", cols: "col-span-1" },
+    { src: "/4.jpeg", alt: "Luxury Kitchen 4", title: "Heritage Craft", cols: "col-span-1" },
+    { src: "/5.jpeg", alt: "Luxury Kitchen 5", title: "Contemporary", cols: "col-span-1 row-span-2" },
+  ]
+
   return (
     <main className="min-h-screen bg-background">
-      <BubbleMenu
-        items={navItems}
-        logo={<span className="text-lg font-bold tracking-tighter">G3 LUXE</span>}
-        menuBg="#ffffff"
-        menuContentColor="#111111"
-        useFixedPosition={true}
-      />
-      
-      <div style={{ position: 'relative', height: '600px' }}>
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#00ffff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-        />
-      </div>
-      
+      <Header />
       <HeroSection />
-      <IntroSection />
       <AboutSection />
-      <WhyChooseSection />
-      <ServicesGrid />
-      <AvailableHomesSection />
-      <AboutGrid />
-      <ContactForm />
+      <StatsSection />
+      <LuxuryGallery items={galleryItems} />
       <Footer />
     </main>
   )

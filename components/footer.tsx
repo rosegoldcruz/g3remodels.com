@@ -1,9 +1,20 @@
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react"
+import { BrandLogo } from "@/components/brand-logo"
 
 export function Footer() {
   return (
-    <footer className="bg-white py-12">
-      <div className="mx-auto max-w-5xl px-6">
+    <footer className="relative bg-background py-20 overflow-hidden">
+      {/* Watermark Logo */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 opacity-[0.03] select-none pointer-events-none">
+         <BrandLogo width={800} height={800} variant="watermark" />
+      </div>
+
+      <div className="mx-auto max-w-5xl px-6 relative z-10">
+         {/* Center Active Logo in Contact/Footer Area */}
+         <div className="flex justify-center mb-12">
+            <BrandLogo width={80} height={80} />
+         </div>
+
         {/* Social Icons */}
         <div className="flex items-center justify-center gap-4">
           <a
@@ -58,8 +69,8 @@ export function Footer() {
 
         {/* Copyright and Links */}
         <div className="mt-8 text-center">
-          <p className="text-xs text-muted-foreground">
-            Copyright ©{new Date().getFullYear()} G³ Contracting. All Rights Reserved.
+          <p className="text-xs text-muted-foreground flex items-center justify-center gap-1">
+            Copyright ©{new Date().getFullYear()} <BrandLogo width={16} height={16} className="opacity-50" />. All Rights Reserved.
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
             <a href="#" className="hover:text-foreground">

@@ -2,29 +2,82 @@
 
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { BrandLogo } from "@/components/brand-logo"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const videoWrapperRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    gsap.fromTo(containerRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5, ease: "power2.out" })
+    const ctx = gsap.context(() => {
+      // Pinning the hero section for the scroll effect
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top", 
+          scrub: 1, 
+          pin: true, 
+          pinSpacing: false, // Allow content to overlap if needed, or true to push
+        }
+      })
+
+      // Scale down video and round corners
+      tl.to(videoWrapperRef.current, {
+        scale: 0.9,
+        borderRadius: "2rem",
+        duration: 1,
+        ease: "power2.out",
+      })
+      
+      // Move logo and fade out to simulate docking
+      tl.to(logoRef.current, {
+        opacity: 0,
+        scale: 0.2,
+        y: -100, // Move up towards header
+        duration: 0.5,
+        ease: "power2.in",
+      }, "<")
+
+    }, containerRef)
+
+    return () => ctx.revert()
   }, [])
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden">
-      {/* Full-bleed background video */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="/seven-desert-mountain-header.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        // Using the video as background, no controls
-      />
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-background">
+      <div 
+        ref={videoWrapperRef}
+        className="relative h-full w-full overflow-hidden origin-center will-change-transform"
+      >
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/seven-desert-mountain-header.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
-      {/* Subtle dark gradient overlay for better nav visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent" />
+      {/* Hero Logo - Centered Initially */}
+      <div 
+        ref={logoRef}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40"
+      >
+        <BrandLogo width={300} height={300} className="invert drop-shadow-2xl" /> 
+      </div>
+      
+      <div className="absolute bottom-12 left-0 right-0 text-center z-30 pointer-events-none">
+        <p className="text-white/80 uppercase tracking-[0.3em] text-xs md:text-sm animate-pulse">
+          Scroll to Explore
+        </p>
+      </div>
     </section>
   )
 }

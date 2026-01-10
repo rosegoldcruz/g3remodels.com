@@ -1,6 +1,8 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
+import { SmoothScroll } from "@/components/smooth-scroll"
+import { Preloader } from "@/components/preloader"
 import "./globals.css"
 
 const geistSans = Geist({ 
@@ -96,7 +98,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
-        {children}
+        <Preloader />
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   )

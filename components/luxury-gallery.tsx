@@ -1,125 +1,72 @@
-'use client'
+"use client"
 
-import { useRef, useState } from 'react'
-import Image from 'next/image'
-import './luxury-gallery.css'
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
 
-interface GalleryItemData {
+interface GalleryItem {
+  id: number
   src: string
-  alt: string
-  title: string
-  cols?: string
-}
-
-interface GalleryItemProps {
-  src: string
-  alt: string
+  className: string
   title: string
 }
 
-function GalleryItem({ src, alt, title }: GalleryItemProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [overlayStyle, setOverlayStyle] = useState<React.CSSProperties>({ opacity: 0 })
+const defaultItems: GalleryItem[] = [
+  { id: 1, src: "/1.jpeg", className: "col-span-1 md:col-span-2 row-span-2", title: "Fusion Shaker" },
+  { id: 2, src: "/2.jpeg", className: "col-span-1", title: "Slab Minimalist" },
+  { id: 3, src: "/3.jpeg", className: "col-span-1", title: "Modern Elegance" },
+  { id: 4, src: "/4.jpeg", className: "col-span-1 md:col-span-2", title: "Heritage Craft" },
+  { id: 5, src: "/5.jpeg", className: "col-span-1 md:col-span-1", title: "Contemporary" },
+]
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
-    const { left, top, width, height } = containerRef.current.getBoundingClientRect()
-    const x = e.clientX - left
-    const y = e.clientY - top
+export function LuxuryGallery({ items = defaultItems }: { items?: any[] }) {
+  const [selectedId, setSelectedId] = useState<number | null>(null)
 
-    setOverlayStyle({
-      opacity: 1,
-      background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(255,255,255,0.15), transparent 40%)`,
-    })
-  }
-
-  const handleMouseLeave = () => {
-    setOverlayStyle({ opacity: 0 })
-  }
+  // Use props items if available (mapping them to our structure if needed), or default
+  // Just use defaultItems for now as prop passing requires remapping logic which I can simplify:
+  // We utilize the passed items if strictly matching or just ignore for rebuild per prompt requirements
+  // "Use Layout Morphing"
+  
+  const displayItems = items === defaultItems ? defaultItems : items?.map((item, idx) => ({
+      id: idx + 1,
+      src: item.src,
+      title: item.title,
+      className: item.cols || "col-span-1"
+  })) || defaultItems
 
   return (
-    <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="luxury-gallery-item"
-    >
-      {/* Light Spotlight Overlay */}
-      <div className="luxury-gallery-overlay" style={overlayStyle} />
-
-      {/* Image */}
-      <div className="luxury-gallery-image-wrapper">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="luxury-gallery-image"
-          quality={85}
-        />
+    <section className="py-24 bg-background" id="projects">
+      <div className="container mx-auto px-6 mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">Selected Works</h2>
       </div>
-
-      {/* Title on Hover */}
-      <div className="luxury-gallery-title">
-        <p>{title}</p>
-      </div>
-    </div>
-  )
-}
-
-interface LuxuryGalleryProps {
-  items?: GalleryItemData[]
-}
-
-export function LuxuryGallery({ items = defaultItems }: LuxuryGalleryProps) {
-  return (
-    <section className="luxury-gallery-section">
-      <div className="luxury-gallery-container">
-        <div className="luxury-gallery-header">
-          <h2 className="luxury-gallery-title-main">The Collection</h2>
-          <div className="luxury-gallery-divider" />
-        </div>
-
-        <div className="luxury-gallery-grid">
-          {items.map((photo, i) => (
-            <div key={i} className={`luxury-gallery-item-wrapper ${photo.cols || 'col-span-1'}`}>
-              <GalleryItem src={photo.src} alt={photo.alt} title={photo.title} />
-            </div>
+      
+      <div className="container mx-auto px-6 h-full min-h-[600px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] gap-4">
+          {displayItems.map((item) => (
+            <motion.div
+              key={item.id}
+              layoutId={`card-${item.id}`}
+              onClick={() => setSelectedId(item.id)}
+              className={cn(
+                "relative cursor-pointer overflow-hidden rounded-xl gap-4 group",
+                item.className
+              )}
+            >
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+                  <h3 className="font-bold text-xl">{item.title}</h3>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-const defaultItems: GalleryItemData[] = [
-  {
-    src: '/placeholder.svg?w=600&h=600',
-    alt: 'Luxury Kitchen 1',
-    title: 'Fusion Shaker',
-    cols: 'col-span-2 row-span-2',
-  },
-  {
-    src: '/placeholder.svg?w=400&h=400',
-    alt: 'Luxury Kitchen 2',
-    title: 'Slab Minimalist',
-    cols: 'col-span-1',
-  },
-  {
-    src: '/placeholder.svg?w=400&h=400',
-    alt: 'Luxury Kitchen 3',
-    title: 'Modern Elegance',
-    cols: 'col-span-1',
-  },
-  {
-    src: '/placeholder.svg?w=400&h=400',
-    alt: 'Luxury Kitchen 4',
-    title: 'Heritage Craft',
-    cols: 'col-span-1',
-  },
-  {
-    src: '/placeholder.svg?w=400&h=400',
-    alt: 'Luxury Kitchen 5',
-    title: 'Contemporary',
-    cols: 'col-span-1 row-span-2',
-  },
-]
