@@ -76,126 +76,223 @@ const CONFIG_DATA = {
     arch: {
       name: "Arch",
       description: "Elegant curved pulls with a timeless silhouette. Perfect for transitional and contemporary kitchens.",
-      sizes: ["Knob: 1 7/16\"", "Pull: 6\" lengths", "Pull: 7 1/8\" lengths"],
       finishes: {
         rose_gold: { 
           pull: "hardware/arch/Arch_RoseGold.png",
-          withDoor: "hardware/arch/Arch_RoseGold_with_tpull.png"
+          withDoor: "hardware/arch/Arch_RoseGold_with_tpull.png",
+          sizeImages: [
+            { size: "Knob: 1 7/16\"", image: "hardware/arch/Arch_RoseGoldSize 1in 7-16 - Edited.png" },
+            { size: "Pull: 6\"", image: "hardware/arch/Arch_RoseGold_Size 6 Inches - Edited.png" },
+            { size: "Pull: 7 1/8\"", image: "hardware/arch/Arch_RoseGold_-Size 7 1-8in - Edited.png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/arch/Arch_SatinNickel.png",
-          withDoor: "hardware/arch/Arch_SatinNickel_with_tpull.png"
+          withDoor: "hardware/arch/Arch_SatinNickel_with_tpull.png",
+          sizeImages: [
+            { size: "Knob: 1 7/16\"", image: "hardware/arch/Arch_SatinNickel-Size 1in 7-16 - Edited.png" },
+            { size: "Pull: 6\"", image: "hardware/arch/Arch_SatinNickel_Size 6 Inches - Edited.png" },
+            { size: "Pull: 7 1/8\"", image: "hardware/arch/Arch_SatinNickel-Size 7 1-8in - Edited.png" },
+          ]
         },
         matte_black: { 
           pull: "hardware/arch/Arch_MatteBlack.png",
-          withDoor: "hardware/arch/Arch_MatteBlack_with _tpull.png"
+          withDoor: "hardware/arch/Arch_MatteBlack_with _tpull.png",
+          sizeImages: [
+            { size: "Knob: 1 7/16\"", image: "hardware/arch/Arch_MatteBlack_Size 1in 7-16 - Edited.png" },
+            { size: "Pull: 6\"", image: "hardware/arch/Arch_MatteBlack_Size 6 Inches - Edited.png" },
+            { size: "Pull: 7 1/8\"", image: "hardware/arch/Arch_MatteBlack_Size 7 1-8in - Edited.png" },
+          ]
         },
         chrome: { 
           pull: "hardware/arch/arch_chrome.png",
-          withDoor: "hardware/arch/arch_chrome_with_tpull.png"
+          withDoor: "hardware/arch/arch_chrome_with_tpull.png",
+          sizeImages: [
+            { size: "Knob: 1 7/16\"", image: "hardware/arch/arch_chrome_Size 1in 7-16.png" },
+            { size: "Pull: 6\"", image: "hardware/arch/arch_chrome_6in.png" },
+            { size: "Pull: 7 1/8\"", image: "hardware/arch/arch_chrome_7 1-8in.png" },
+          ]
         },
       },
     },
     artisan: {
       name: "Artisan",
       description: "Handcrafted-inspired pulls bring warmth and character to your cabinets. Ideal for rustic, farmhouse, or eclectic styles.",
-      sizes: ["Knob: 1 7/32\"", "Pull: 4 3/4\" lengths", "Pull: 6 1/6\" lengths"],
       finishes: {
         rose_gold: { 
           pull: "hardware/artisan/Artisan_RoseGold.png",
-          withDoor: "hardware/artisan/Artisan_RoseGold_with_knob.png.png"
+          withDoor: "hardware/artisan/Artisan_RoseGold_with_knob.png.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/artisan/Artisan_RoseGold_Size1 7-32 Inch Knob - Edited.png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/artisan/Artisan_RoseGold_Size4 3-4 Inches - Edited.png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/artisan/Artisan_RoseGold_Size6 1-6 Inches - Edited.png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/artisan/Artisan_SatinNickel.png",
-          withDoor: "hardware/artisan/Artisan_SatinNickel_with_knob.png.png"
+          withDoor: "hardware/artisan/Artisan_SatinNickel_with_knob.png.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/artisan/Artisan_SatinNickel_Size1 7-32 Inch Knob .png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/artisan/Artisan_SatinNickel_Size4 3-4 Inches .png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/artisan/Artisan_SatinNickel_Size6 1-6 Inches.png" },
+          ]
         },
         matte_black: { 
           pull: "hardware/artisan/Artisan_MatteBlack.png",
-          withDoor: "hardware/artisan/Artisan_MatteBlack_with_knob.png.png"
+          withDoor: "hardware/artisan/Artisan_MatteBlack_with_knob.png.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/artisan/Artisan_MatteBlack_Size1 7-32 Inch Knob - Edited.png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/artisan/Artisan_MatteBlack_Size4 3-4 Inches - Edited.png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/artisan/Artisan_MatteBlack_Size6 1-6-16 Inches - Edited.png" },
+          ]
         },
         chrome: { 
           pull: "hardware/artisan/Artisan_Chrome.png",
-          withDoor: "hardware/artisan/Artisan_Chrome_with_tpull.png.png"
+          withDoor: "hardware/artisan/Artisan_Chrome_with_tpull.png.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/artisan/Artisan_Chrome_Size1 7-32 Inch.png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/artisan/Artisan_Chrome_Size4 3-4 Inches.png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/artisan/Artisan_Chrome_6 1-16 Inches - Edited.png" },
+          ]
         },
       },
     },
     cottage: {
       name: "Cottage",
       description: "Classic cottage-style hardware with soft curves. Brings a cozy, welcoming feel to any kitchen.",
-      sizes: ["Knob: 1 7/32\"", "Pull: 4 3/4\" lengths", "Pull: 6 1/6\" lengths"],
       finishes: {
         rose_gold: { 
           pull: "hardware/cottage/Cottage_RoseGold_.png.png",
-          withDoor: "hardware/cottage/Cottage_RoseGold_with_knob.png"
+          withDoor: "hardware/cottage/Cottage_RoseGold_with_knob.png",
+          sizeImages: [
+            { size: "Knob", image: "hardware/cottage/Cottage_RoseGold__K.png" },
+            { size: "Pull: 96mm", image: "hardware/cottage/Cottage_RoseGold_96 .png" },
+            { size: "Pull: 128mm", image: "hardware/cottage/Cottage_RoseGold_128-1.png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/cottage/Cottage__SatinNickel.png",
-          withDoor: "hardware/cottage/Cottage__SatinNickel_with_knob.png"
+          withDoor: "hardware/cottage/Cottage__SatinNickel_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/cottage/Cottage__SatinNickel_Size1 7-32 Inch Knob .png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/cottage/Cottage__SatinNickel_Size4 3-4 Inches .png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/cottage/Cottage__SatinNickel_Size6 1-6 Inches .png" },
+          ]
         },
         chrome: { 
           pull: "hardware/cottage/Cottage__Chrome.png",
-          withDoor: "hardware/cottage/Cottage__Chrome_with_knob.png"
+          withDoor: "hardware/cottage/Cottage__Chrome_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 1 7/32\"", image: "hardware/cottage/Cottage__Chrome_Size1 7-32 Inch Knob .png" },
+            { size: "Pull: 4 3/4\"", image: "hardware/cottage/Cottage__Chrome_Size4 3-4 Inches.png" },
+            { size: "Pull: 6 1/16\"", image: "hardware/cottage/Cottage__Chrome_Size6 1-6 Inches .png" },
+          ]
         },
       },
     },
     loft: {
       name: "Loft",
       description: "Sleek industrial-inspired pulls. The perfect choice for modern and urban kitchen designs.",
-      sizes: ["Knob: 15/16\"", "Pull: 4 5/8\" lengths", "Pull: 5 7/8\" lengths"],
       finishes: {
         rose_gold: { 
           pull: "hardware/loft/Loft_RoseGold.png",
-          withDoor: "hardware/loft/Loft_RoseGold_with_knob.png"
+          withDoor: "hardware/loft/Loft_RoseGold_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/loft/Loft_RoseGold_size 15-16 inch knob .png" },
+            { size: "Pull: 4 5/8\"", image: "hardware/loft/Loft_RoseGold_size 4 5-8 inch .png" },
+            { size: "Pull: 5 7/8\"", image: "hardware/loft/Loft_RoseGold_size 5 7-8 inch .png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/loft/Loft_SatinNickel.png",
-          withDoor: "hardware/loft/Loft_SatinNickel_with_knob.png"
+          withDoor: "hardware/loft/Loft_SatinNickel_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/loft/Loft_SatinNickel_size 15-16 inch knob .png" },
+            { size: "Pull: 4 5/8\"", image: "hardware/loft/Loft_SatinNickel_size 4 5-8 inch  .png" },
+            { size: "Pull: 5 7/8\"", image: "hardware/loft/Loft_SatinNickel_size 5 7-8 inch .png" },
+          ]
         },
         matte_black: { 
           pull: "hardware/loft/Loft_MatteBlack.png",
-          withDoor: "hardware/loft/Loft_MatteBlack__with_knob.png"
+          withDoor: "hardware/loft/Loft_MatteBlack__with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/loft/Loft_MatteBlack_size 15-16 inch knob .png" },
+            { size: "Pull: 4 5/8\"", image: "hardware/loft/Loft_MatteBlack_size 4 5-8 inch .png" },
+            { size: "Pull: 5 7/8\"", image: "hardware/loft/Loft_MatteBlack_size 5 7-8 inch .png" },
+          ]
         },
         chrome: { 
           pull: "hardware/loft/Loft_Chrome_1.png.png",
-          withDoor: "hardware/loft/Loft_Chrome_with_knob.png"
+          withDoor: "hardware/loft/Loft_Chrome_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/loft/Loft_Chrome_size 15-16 inch knob.png" },
+            { size: "Pull: 4 5/8\"", image: "hardware/loft/Loft_Chrome_size 4 5-8 inch .png" },
+            { size: "Pull: 5 7/8\"", image: "hardware/loft/Loft_Chrome_size 5 7-8 inch .png" },
+          ]
         },
       },
     },
     square: {
       name: "Square",
       description: "Bold geometric hardware with clean lines. Makes a statement in contemporary and minimalist kitchens.",
-      sizes: ["Knob: 15/16\"", "Pull: 4 1/4\" lengths", "Pull: 5 7/16\" lengths"],
       finishes: {
         rose_gold: { 
           pull: "hardware/square/Square_RoseGold.png",
-          withDoor: "hardware/square/Square_RoseGold_with_knob.png"
+          withDoor: "hardware/square/Square_RoseGold_with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/square/Square_RoseGold_Size 15-16 Inch.png" },
+            { size: "Pull: 4 1/4\"", image: "hardware/square/Square_RoseGold_Size 4 1-4 Inches .png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/square/Square_SatinNickel.png",
-          withDoor: "hardware/square/Square_SatinNickel__with_knob.png"
+          withDoor: "hardware/square/Square_SatinNickel__with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/square/Square_SatinNickel_Size 15-16 Inch .png" },
+            { size: "Pull: 4 1/4\"", image: "hardware/square/Square_SatinNickel_Size 4 1-4 Inches .png" },
+            { size: "Pull: 5 7/16\"", image: "hardware/square/Square_SatinNickel_Size 5 7-16 Inches.png" },
+          ]
         },
         matte_black: { 
           pull: "hardware/square/Square_MatteBlack.png",
-          withDoor: "hardware/square/Square_MatteBlack__with_knob.png"
+          withDoor: "hardware/square/Square_MatteBlack__with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/square/Square_MatteBlack_Size 15-16 Inch .png" },
+            { size: "Pull: 4 1/4\"", image: "hardware/square/Square_MatteBlack_Size 4 1-4 Inches .png" },
+            { size: "Pull: 5 7/16\"", image: "hardware/square/Square_MatteBlack_Size 5 7-16 Inches .png" },
+          ]
         },
         chrome: { 
           pull: "hardware/square/Square_chrome.png",
-          withDoor: "hardware/square/Square_chrome__with_knob.png"
+          withDoor: "hardware/square/Square_chrome__with_knob.png",
+          sizeImages: [
+            { size: "Knob: 15/16\"", image: "hardware/square/Square_chrome_Size 15-16 Inch .png" },
+            { size: "Pull: 4 1/4\"", image: "hardware/square/Square_chrome_Size 4 1-4 Inches .png" },
+            { size: "Pull: 5 7/16\"", image: "hardware/square/Square_chrome_Size 5 7-16 Inches .png" },
+          ]
         },
       },
     },
     bar: {
       name: "Bar",
       description: "Classic bar pulls with a timeless appeal. Versatile enough for any kitchen style.",
-      sizes: ["Knob: Round", "Pull: 4.5\" lengths", "Pull: 6\" lengths"],
       finishes: {
         matte_black: { 
           pull: "hardware/bar/Bar-pulls-black .png",
-          withDoor: "hardware/bar/Bar-matte-black-tpull.png"
+          withDoor: "hardware/bar/Bar-matte-black-tpull.png",
+          sizeImages: [
+            { size: "Knob: Round", image: "hardware/bar/Bar-Black-Matte-Round-Knob-on-Shaker.png" },
+            { size: "Pull: 4.5\"", image: "hardware/bar/Bar-Black-Matte-Pull-4.5-on-Shaker - Edited.png" },
+            { size: "Pull: 6\"", image: "hardware/bar/Bar-Black-Matte-Pull-6.0-on-Shaker.png" },
+          ]
         },
         satin_nickel: { 
           pull: "hardware/bar/BarPull_SatinNickel.png",
-          withDoor: "hardware/bar/BarPull_SatinNickel_with_tpull.png"
+          withDoor: "hardware/bar/BarPull_SatinNickel_with_tpull.png",
+          sizeImages: [
+            { size: "Knob: Round", image: "hardware/bar/Satin-Nickle-Round-Knob .png" },
+            { size: "Pull", image: "hardware/bar/BarPull_SatinNickel_scale.png" },
+          ]
         },
       },
     },
@@ -492,7 +589,7 @@ export function CabinetConfigurator() {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  {Object.entries(currentHw.finishes).map(([finish, finishData]) => (
+                  {Object.entries(currentHw.finishes).map(([finish]) => (
                     <button
                       key={finish}
                       onClick={() => setHwFinish(finish)}
@@ -520,14 +617,22 @@ export function CabinetConfigurator() {
                 </div>
               </div>
 
-              {/* Available Sizes */}
+              {/* Available Sizes - Image Gallery */}
               <div className="bg-zinc-800/30 rounded-xl p-4 border border-white/5">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-3">Available Sizes</p>
-                <div className="flex flex-wrap gap-2">
-                  {currentHw.sizes?.map((size: string, idx: number) => (
-                    <span key={idx} className="px-3 py-1.5 bg-zinc-800 rounded-full text-xs font-medium text-zinc-300 border border-white/5">
-                      {size}
-                    </span>
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">Available Sizes for {FINISH_NAMES[hwFinish]}</p>
+                <div className="grid grid-cols-3 gap-3">
+                  {currentHw.finishes[hwFinish]?.sizeImages?.map((sizeItem: { size: string; image: string }, idx: number) => (
+                    <div key={idx} className="group relative">
+                      <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all">
+                        <Image
+                          src={`/cabs_clean/${sizeItem.image}`}
+                          alt={`${currentHw.name} ${FINISH_NAMES[hwFinish]} - ${sizeItem.size}`}
+                          fill
+                          className="object-contain p-2 group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                      <p className="text-[10px] text-center text-zinc-400 mt-2 font-medium">{sizeItem.size}</p>
+                    </div>
                   ))}
                 </div>
               </div>
