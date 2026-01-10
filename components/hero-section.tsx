@@ -3,14 +3,12 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { BrandLogo } from "@/components/brand-logo"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const videoWrapperRef = useRef<HTMLDivElement>(null)
-  const logoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,15 +32,6 @@ export function HeroSection() {
         ease: "power2.out",
       })
       
-      // Move logo and fade out to simulate docking
-      tl.to(logoRef.current, {
-        opacity: 0,
-        scale: 0.2,
-        y: -100, // Move up towards header
-        duration: 0.5,
-        ease: "power2.in",
-      }, "<")
-
     }, containerRef)
 
     return () => ctx.revert()
@@ -65,14 +54,6 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      {/* Hero Logo - Centered Initially */}
-      <div 
-        ref={logoRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40"
-      >
-        <BrandLogo width={300} height={300} className="invert drop-shadow-2xl" /> 
-      </div>
-      
       <div className="absolute bottom-12 left-0 right-0 text-center z-30 pointer-events-none">
         <p className="text-white/80 uppercase tracking-[0.3em] text-xs md:text-sm animate-pulse">
           Scroll to Explore
