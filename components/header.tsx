@@ -45,7 +45,7 @@ export function Header() {
           transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
           className="cursor-pointer"
         >
-          <a href="#" aria-label="Home">
+          <a href="/" aria-label="Home">
              {/* The logo here should be invisible initially if handled by Hero, but prompt implies docking.
                  We can just keep it here and let Hero cover it or cross-fade.
                  For simplicity + robustness: Logo is visible in header when scrolled, or always visible but Hero uses a different one?

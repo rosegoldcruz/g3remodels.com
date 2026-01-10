@@ -12,7 +12,9 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-6 relative z-10">
          {/* Center Active Logo in Contact/Footer Area */}
          <div className="flex justify-center mb-12">
-            <BrandLogo width={80} height={80} />
+            <a href="/" aria-label="Home" className="inline-block transition-opacity hover:opacity-80">
+                <BrandLogo width={80} height={80} />
+            </a>
          </div>
 
         {/* Social Icons */}
