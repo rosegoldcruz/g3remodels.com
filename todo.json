@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Check package.json for ogl dependency",
+    "status": "not-started"
+  },
+  {
+    "id": 2,
+    "title": "Fix ogl dependency issue",
+    "status": "not-started"
+  },
+  {
+    "id": 3,
+    "title": "Investigate and fix syntax error in app/gallery/page.tsx",
+    "status": "not-started"
+  }
+]
