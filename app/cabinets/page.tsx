@@ -24,13 +24,13 @@ export default function CabinetsPage() {
                 The Smarter Kitchen Upgrade
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
-                Cabinet Refacing
+                Reface. Refresh. Refine.
             </h1>
             <p className="text-xl md:text-2xl font-light text-white/90 max-w-3xl mx-auto mb-4">
-                Transform your kitchen in days, not months.
+                Why gut your kitchen when the foundation is solid?
             </p>
             <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-8">
-                Why rip out perfectly good cabinet boxes? Refacing gives you a stunning, brand-new look at a fraction of the cost and time of a full remodel. Same layout. New doors. New hardware. New life.
+                Our refacing process gives you custom-crafted doors and premium hardware at a fraction of the cost of a traditional remodel. Save your time. Spend your style.
             </p>
             <div className="flex flex-wrap justify-center gap-8 mt-10 text-left">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 w-64">
