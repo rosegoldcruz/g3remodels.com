@@ -57,9 +57,9 @@ export function Header() {
         </motion.div>
 
         <nav className="hidden md:flex items-center gap-8">
-           {/* Replaced text with standard links, simplified */}
-           <a href="#about" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mixed-blend-difference">About</a>
-           <a href="#projects" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mixed-blend-difference">Projects</a>
+           <a href="/about" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">About</a>
+           <a href="/gallery" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">Gallery</a>
+           <a href="/cabinets" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">Cabinets</a>
            <Button className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90">
              Contact
            </Button>

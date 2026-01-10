@@ -2,25 +2,25 @@
 
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
+// Removed AboutSection to keep homepage purely visual
 import { StatsSection } from "@/components/stats-section"
 import { LuxuryGallery } from "@/components/luxury-gallery"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
   const galleryItems = [
-    { src: "/1.jpeg", alt: "Luxury Kitchen 1", title: "Fusion Shaker", cols: "col-span-2 row-span-2" },
-    { src: "/2.jpeg", alt: "Luxury Kitchen 2", title: "Slab Minimalist", cols: "col-span-1" },
-    { src: "/3.jpeg", alt: "Luxury Kitchen 3", title: "Modern Elegance", cols: "col-span-1" },
-    { src: "/4.jpeg", alt: "Luxury Kitchen 4", title: "Heritage Craft", cols: "col-span-1" },
-    { src: "/5.jpeg", alt: "Luxury Kitchen 5", title: "Contemporary", cols: "col-span-1 row-span-2" },
+    { src: "/luxury-desert-estate-panoramic-view-with-golf-cour.jpg", alt: "Desert Estate", title: "Desert Estate", cols: "col-span-1 md:col-span-2 row-span-2" },
+    { src: "/luxury-infinity-pool-night-time-modern-desert-home.jpg", alt: "Modern Villa", title: "Modern Villa", cols: "col-span-1" },
+    { src: "/luxury-home-interior-living-room-modern-furniture-.jpg", alt: "Interior Design", title: "Interior Design", cols: "col-span-1" },
+    { src: "/luxury-estate-home-exterior-modern-architecture-de.jpg", alt: "Architectural Detail", title: "Architectural Detail", cols: "col-span-1 md:col-span-2" },
+    { src: "/luxury-modern-home-exterior-desert-landscape-archi.jpg", alt: "Landscape Integration", title: "Landscape Integration", cols: "col-span-1 md:col-span-1" },
   ]
 
   return (
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <AboutSection />
+      {/* Visual focused flow - straight to visuals and numbers */}
       <StatsSection />
       <LuxuryGallery items={galleryItems} />
       <Footer />
