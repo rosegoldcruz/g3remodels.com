@@ -12,7 +12,7 @@ export function BrandLogo({ className, width = 40, height = 40, variant = "brand
   return (
     <div className={cn("relative inline-block align-middle", className)} style={{ width, height }}>
       <Image
-        src="/g3.jpeg"
+        src="/g3.png"
         alt="G3 Contracting Logo"
         fill
         className={cn(

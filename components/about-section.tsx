@@ -73,7 +73,7 @@ export function AboutSection() {
           <BentoGridItem
             title="Family Owned"
             description="Founded in 2003, we bring over two decades of family values to every project."
-            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/50 bg-[url('/g3.jpeg')] bg-cover bg-center grayscale opacity-50" />}
+            header={<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/50 bg-[url('/g3.png')] bg-cover bg-center grayscale opacity-50" />}
             icon={<Users className="h-4 w-4 text-neutral-500" />}
             className="md:col-span-1"
           />
