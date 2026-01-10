@@ -20,7 +20,7 @@ export function HeroSection() {
           end: "bottom top", 
           scrub: 1, 
           pin: true, 
-          pinSpacing: false, // Allow content to overlap if needed, or true to push
+          pinSpacing: true, // Push following content down
         }
       })
 
