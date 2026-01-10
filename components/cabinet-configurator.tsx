@@ -213,40 +213,6 @@ export function CabinetConfigurator() {
                 </div>
               )}
 
-              {/* Floating Hardware Preview Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="absolute bottom-4 left-4 w-44 bg-black/70 backdrop-blur-xl border border-white/20 rounded-xl p-4 shadow-2xl"
-              >
-                <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">Hardware Preview</p>
-                <div className="relative h-28 flex items-center justify-center bg-zinc-800/50 rounded-lg overflow-hidden">
-                  {/* Door Sample (faded) */}
-                  <Image
-                    src={`/cabs_clean/${currentColor.door}`}
-                    alt="Door Sample"
-                    fill
-                    className="object-contain opacity-40"
-                  />
-                  {/* Hardware Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image
-                      src={`/cabs_clean/${currentHwFinish}`}
-                      alt="Hardware"
-                      width={48}
-                      height={48}
-                      className="object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
-                    />
-                  </div>
-                </div>
-                <div className="mt-3 text-center">
-                  <p className="text-[11px] font-semibold text-orange-500">
-                    {currentColor.color} + {FINISH_NAMES[hwFinish] || hwFinish}
-                  </p>
-                </div>
-              </motion.div>
-
               {/* Style Badge */}
               <div className="absolute top-4 left-4 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
                 <span className="text-xs font-bold uppercase tracking-wider">{currentStyle.name}</span>
@@ -316,67 +282,9 @@ export function CabinetConfigurator() {
                 </div>
               </section>
 
-              {/* Step 2: Hardware Type */}
-              <section>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-6 h-6 rounded-full bg-orange-600 text-xs font-black flex items-center justify-center">2</span>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-black">Hardware Style</h3>
-                </div>
-                <div className="grid grid-cols-3 gap-2">
-                  {Object.entries(CONFIG_DATA.hardware).map(([id, data]) => (
-                    <button
-                      key={id}
-                      onClick={() => handleHwTypeChange(id)}
-                      className={cn(
-                        "px-3 py-2.5 rounded-lg text-xs font-bold transition-all duration-200",
-                        hwType === id
-                          ? "bg-white text-zinc-900 shadow-lg"
-                          : "bg-white/5 text-zinc-300 hover:bg-white/10 hover:text-white"
-                      )}
-                    >
-                      {data.name}
-                    </button>
-                  ))}
-                </div>
-              </section>
-
-              {/* Step 3: Hardware Finish */}
-              <section>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-6 h-6 rounded-full bg-orange-600 text-xs font-black flex items-center justify-center">3</span>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-black">Hardware Finish</h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {Object.keys(currentHw.finishes).map((finish) => (
-                    <button
-                      key={finish}
-                      onClick={() => setHwFinish(finish)}
-                      className={cn(
-                        "group flex flex-col items-center gap-2 p-2 rounded-lg transition-all duration-200",
-                        hwFinish === finish ? "bg-white/10" : "hover:bg-white/5"
-                      )}
-                      title={FINISH_NAMES[finish] || finish}
-                    >
-                      <div
-                        className={cn(
-                          "w-10 h-10 rounded-full border-2 transition-all duration-200 shadow-lg",
-                          hwFinish === finish
-                            ? "border-orange-500 scale-110"
-                            : "border-white/20 group-hover:border-white/40"
-                        )}
-                        style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
-                      />
-                      <span className="text-[10px] font-medium text-zinc-400 group-hover:text-white">
-                        {FINISH_NAMES[finish] || finish}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </section>
-
               {/* Summary */}
               <div className="bg-zinc-800/50 rounded-xl p-4 border border-white/5">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-3">Your Selection</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-3">Cabinet Selection</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-zinc-400">Style</span>
@@ -386,17 +294,125 @@ export function CabinetConfigurator() {
                     <span className="text-zinc-400">Color</span>
                     <span className="font-semibold">{currentColor.color}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-zinc-400">Hardware</span>
-                    <span className="font-semibold">{currentHw.name} - {FINISH_NAMES[hwFinish]}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* HARDWARE CONFIGURATOR - Separate Section */}
+        <div className="mt-16 border-t border-white/10 pt-16">
+          <div className="text-center mb-12">
+            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-3">Step 2</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Select Your Hardware</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto">Choose from our curated collection of premium hardware finishes to complete your look.</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Hardware Type Selection */}
+            <div className="bg-zinc-900 rounded-2xl border border-white/5 p-6">
+              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-6">Hardware Style</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {Object.entries(CONFIG_DATA.hardware).map(([id, data]) => (
+                  <button
+                    key={id}
+                    onClick={() => handleHwTypeChange(id)}
+                    className={cn(
+                      "relative p-4 rounded-xl text-center transition-all duration-200 border-2",
+                      hwType === id
+                        ? "bg-white text-zinc-900 border-white shadow-lg shadow-white/20"
+                        : "bg-white/5 text-zinc-300 border-transparent hover:bg-white/10 hover:text-white hover:border-white/20"
+                    )}
+                  >
+                    <div className="h-16 flex items-center justify-center mb-3">
+                      <Image
+                        src={`/cabs_clean/${Object.values(data.finishes)[0]}`}
+                        alt={data.name}
+                        width={60}
+                        height={60}
+                        className={cn(
+                          "object-contain transition-all",
+                          hwType === id ? "" : "opacity-60"
+                        )}
+                      />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-wider">{data.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Hardware Finish Selection */}
+            <div className="bg-zinc-900 rounded-2xl border border-white/5 p-6">
+              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-6">Finish for {currentHw.name}</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {Object.entries(currentHw.finishes).map(([finish, path]) => (
+                  <button
+                    key={finish}
+                    onClick={() => setHwFinish(finish)}
+                    className={cn(
+                      "group relative p-4 rounded-xl transition-all duration-200 border-2",
+                      hwFinish === finish
+                        ? "bg-orange-600/20 border-orange-500"
+                        : "bg-white/5 border-transparent hover:bg-white/10 hover:border-white/20"
+                    )}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={cn(
+                          "w-12 h-12 rounded-full border-2 shadow-lg flex-shrink-0",
+                          hwFinish === finish ? "border-orange-500" : "border-white/20"
+                        )}
+                        style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
+                      />
+                      <div className="text-left">
+                        <p className="font-bold text-sm">{FINISH_NAMES[finish] || finish}</p>
+                        <p className="text-xs text-zinc-500">Premium finish</p>
+                      </div>
+                    </div>
+                    {/* Preview Image */}
+                    <div className="mt-4 h-20 flex items-center justify-center bg-zinc-800/50 rounded-lg">
+                      <Image
+                        src={`/cabs_clean/${path}`}
+                        alt={`${FINISH_NAMES[finish]} ${currentHw.name}`}
+                        width={80}
+                        height={80}
+                        className="object-contain drop-shadow-lg"
+                      />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Final Summary & CTA */}
+          <div className="mt-12 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-2xl border border-white/10 p-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">Your Complete Selection</p>
+                <div className="flex flex-wrap gap-6">
+                  <div>
+                    <p className="text-xs text-zinc-500">Cabinet Style</p>
+                    <p className="text-lg font-bold">{currentStyle.name}</p>
+                  </div>
+                  <div className="w-px bg-white/10" />
+                  <div>
+                    <p className="text-xs text-zinc-500">Color</p>
+                    <p className="text-lg font-bold">{currentColor.color}</p>
+                  </div>
+                  <div className="w-px bg-white/10" />
+                  <div>
+                    <p className="text-xs text-zinc-500">Hardware</p>
+                    <p className="text-lg font-bold">{currentHw.name} · {FINISH_NAMES[hwFinish]}</p>
                   </div>
                 </div>
               </div>
-
-              {/* CTA */}
-              <button className="w-full py-4 bg-orange-600 hover:bg-orange-500 text-white font-black rounded-xl transition-all duration-200 shadow-xl shadow-orange-900/30 uppercase tracking-wider text-sm">
-                Get a Quote on This Look
-              </button>
+              <div>
+                <button className="w-full py-4 bg-orange-600 hover:bg-orange-500 text-white font-black rounded-xl transition-all duration-200 shadow-xl shadow-orange-900/30 uppercase tracking-wider text-sm">
+                  Get a Quote
+                </button>
+              </div>
             </div>
           </div>
         </div>
