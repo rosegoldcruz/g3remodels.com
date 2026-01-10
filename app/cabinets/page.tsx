@@ -2,10 +2,12 @@
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { CabinetConfigurator } from "@/components/cabinet-configurator"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const styles = [
     {
@@ -98,10 +100,17 @@ export default function CabinetsPage() {
              <p className="text-xl text-white/60 max-w-2xl mx-auto mb-10">
                 Our distinct process allows for complete customization of materials, finishes, and hardware.
              </p>
-             <Button size="lg" className="bg-white text-black hover:bg-white/90 px-8 py-6 text-lg rounded-full">
-                Start Design Consultation
-             </Button>
+             <Link href="/cabinets/configurator">
+               <Button size="lg" className="bg-white text-black hover:bg-white/90 px-8 py-6 text-lg rounded-full">
+                  Launch Design Studio
+               </Button>
+             </Link>
         </div>
+      </section>
+
+      {/* Inline Configurator Preview */}
+      <section className="border-t border-white/10">
+        <CabinetConfigurator />
       </section>
 
       <Footer />
