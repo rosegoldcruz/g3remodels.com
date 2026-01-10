@@ -4,6 +4,8 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { BrandLogo } from "@/components/brand-logo"
 import { cn } from "@/lib/utils"
+import { Menu } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function Header() {
   const ref = useRef<HTMLDivElement>(null)
@@ -60,10 +62,29 @@ export function Header() {
            <a href="/about" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">About</a>
            <a href="/gallery" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">Gallery</a>
            <a href="/cabinets" className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity mix-blend-difference">Cabinets</a>
-           <Button className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90">
+           <Button onClick={() => window.location.href = '/contact'} className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90">
              Contact
            </Button>
         </nav>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button className="p-2" aria-label="Open Menu">
+                <Menu className={cn("h-6 w-6 transition-colors", isScrolled ? "text-foreground" : "text-white mix-blend-difference")} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] border-l border-white/10 bg-black/95 backdrop-blur-xl sm:w-[400px]">
+              <nav className="flex flex-col items-center justify-center h-full gap-10">
+                <a href="/about" className="text-2xl font-light tracking-[0.2em] uppercase text-white hover:text-white/70 transition-colors">About</a>
+                <a href="/gallery" className="text-2xl font-light tracking-[0.2em] uppercase text-white hover:text-white/70 transition-colors">Gallery</a>
+                <a href="/cabinets" className="text-2xl font-light tracking-[0.2em] uppercase text-white hover:text-white/70 transition-colors">Cabinets</a>
+                <a href="/contact" className="text-2xl font-light tracking-[0.2em] uppercase text-white hover:text-white/70 transition-colors">Contact</a>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   )
