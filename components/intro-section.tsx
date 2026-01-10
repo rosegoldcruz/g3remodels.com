@@ -32,27 +32,23 @@ export function IntroSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 md:py-32">
-      <div ref={contentRef} className="mx-auto max-w-4xl px-6 text-center">
-        <p className="mb-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-          G³ Contracting
-        </p>
+    <section ref={sectionRef} className="bg-background py-24 md:py-32">
+      <div ref={contentRef} className="mx-auto max-w-5xl px-6 text-center">
+        <div className="flex justify-center mb-8">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase opacity-50">
+                Established 2003
+            </span>
+        </div>
 
         {/* Main Headline */}
-        <h2 className="font-serif text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl lg:text-6xl">
-          <span className="uppercase tracking-[0.15em]">Quality</span> <span className="font-serif italic">Home</span>
-          <br />
-          <span className="uppercase tracking-[0.15em]">Remodeling</span>
-          <br />
-          <span className="uppercase tracking-[0.15em]">Since 2003</span>
+        <h2 className="font-serif text-3xl font-light leading-tight tracking-wide text-foreground md:text-5xl lg:text-6xl mb-8">
+          Defining the standard of <br />
+          <span className="italic">Luxury Renovation</span>
         </h2>
 
         {/* Description */}
-        <p className="mx-auto mt-10 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          We specialize in efficient, high-quality upgrades—not long, drawn-out construction projects. 
-          Our focus is on smart solutions like cabinet refacing and fast-turn remodels that give homeowners 
-          a major visual upgrade without weeks or months of disruption. As a family operation, every project 
-          is personally overseen by our experienced team.
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground font-light">
+          We specialize in high-impact residential transformations. By combining architectural precision with efficient execution, we deliver estate-grade upgrades without the typical construction delays.
         </p>
       </div>
     </section>
