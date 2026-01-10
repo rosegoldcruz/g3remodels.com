@@ -7,8 +7,8 @@ function NumberTicker({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null)
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, {
-    damping: 40,
-    stiffness: 20,
+    damping: 40, // Slower damping for smoothness
+    stiffness: 20, // Low stiffness for slow animation
   })
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
