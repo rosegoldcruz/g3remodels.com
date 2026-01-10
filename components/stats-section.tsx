@@ -7,8 +7,8 @@ function NumberTicker({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null)
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, {
-    damping: 30,
-    stiffness: 100,
+    damping: 40,
+    stiffness: 20,
   })
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -48,7 +48,7 @@ export function StatsSection() {
           </div>
           <div className="p-8">
             <p className="text-6xl font-bold mb-4 font-mono tracking-tighter">
-              100%
+              <NumberTicker value={100} />%
             </p>
              <div className="text-sm uppercase tracking-[0.2em] text-neutral-400">Client Satisfaction</div>
           </div>
