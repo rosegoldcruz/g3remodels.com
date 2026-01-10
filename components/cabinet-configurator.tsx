@@ -4,6 +4,7 @@ import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { BrandLogo } from "@/components/brand-logo"
 
 // ============================================================================
 // CONFIG DATA - Maps your cabs_clean folder structure
@@ -207,11 +208,23 @@ export function CabinetConfigurator() {
               </AnimatePresence>
 
               {/* Loading Overlay */}
-              {isLoading && (
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
-                  <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-                </div>
-              )}
+              <AnimatePresence>
+                {isLoading && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-10"
+                  >
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
+                      transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <BrandLogo width={64} height={64} />
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Style Badge */}
               <div className="absolute top-4 left-4 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
