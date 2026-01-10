@@ -75,53 +75,128 @@ const CONFIG_DATA = {
   hardware: {
     arch: {
       name: "Arch",
+      description: "Elegant curved pulls with a timeless silhouette. Perfect for transitional and contemporary kitchens.",
+      sizes: ["Knob: 1 7/16\"", "Pull: 6\" lengths", "Pull: 7 1/8\" lengths"],
       finishes: {
-        rose_gold: "hardware/arch/Arch_RoseGold.png",
-        satin_nickel: "hardware/arch/Arch_SatinNickel.png",
-        matte_black: "hardware/arch/Arch_MatteBlack.png",
-        chrome: "hardware/arch/arch_chrome.png",
-      },
-    },
-    bar: {
-      name: "Bar Pull",
-      finishes: {
-        matte_black: "hardware/bar/Bar-pulls-black .png",
-        satin_nickel: "hardware/bar/BarPull_SatinNickel.png",
+        rose_gold: { 
+          pull: "hardware/arch/Arch_RoseGold.png",
+          withDoor: "hardware/arch/Arch_RoseGold_with_tpull.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/arch/Arch_SatinNickel.png",
+          withDoor: "hardware/arch/Arch_SatinNickel_with_tpull.png"
+        },
+        matte_black: { 
+          pull: "hardware/arch/Arch_MatteBlack.png",
+          withDoor: "hardware/arch/Arch_MatteBlack_with _tpull.png"
+        },
+        chrome: { 
+          pull: "hardware/arch/arch_chrome.png",
+          withDoor: "hardware/arch/arch_chrome_with_tpull.png"
+        },
       },
     },
     artisan: {
       name: "Artisan",
+      description: "Handcrafted-inspired pulls bring warmth and character to your cabinets. Ideal for rustic, farmhouse, or eclectic styles.",
+      sizes: ["Knob: 1 7/32\"", "Pull: 4 3/4\" lengths", "Pull: 6 1/6\" lengths"],
       finishes: {
-        rose_gold: "hardware/artisan/Artisan_RoseGold.png",
-        satin_nickel: "hardware/artisan/Artisan_SatinNickel.png",
-        matte_black: "hardware/artisan/Artisan_MatteBlack.png",
-        chrome: "hardware/artisan/Artisan_Chrome.png",
+        rose_gold: { 
+          pull: "hardware/artisan/Artisan_RoseGold.png",
+          withDoor: "hardware/artisan/Artisan_RoseGold_with_knob.png.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/artisan/Artisan_SatinNickel.png",
+          withDoor: "hardware/artisan/Artisan_SatinNickel_with_knob.png.png"
+        },
+        matte_black: { 
+          pull: "hardware/artisan/Artisan_MatteBlack.png",
+          withDoor: "hardware/artisan/Artisan_MatteBlack_with_knob.png.png"
+        },
+        chrome: { 
+          pull: "hardware/artisan/Artisan_Chrome.png",
+          withDoor: "hardware/artisan/Artisan_Chrome_with_tpull.png.png"
+        },
       },
     },
     cottage: {
       name: "Cottage",
+      description: "Classic cottage-style hardware with soft curves. Brings a cozy, welcoming feel to any kitchen.",
+      sizes: ["Knob: 1 7/32\"", "Pull: 4 3/4\" lengths", "Pull: 6 1/6\" lengths"],
       finishes: {
-        rose_gold: "hardware/cottage/Cottage_RoseGold_.png.png",
-        satin_nickel: "hardware/cottage/Cottage__SatinNickel.png",
-        chrome: "hardware/cottage/Cottage__Chrome.png",
+        rose_gold: { 
+          pull: "hardware/cottage/Cottage_RoseGold_.png.png",
+          withDoor: "hardware/cottage/Cottage_RoseGold_with_knob.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/cottage/Cottage__SatinNickel.png",
+          withDoor: "hardware/cottage/Cottage__SatinNickel_with_knob.png"
+        },
+        chrome: { 
+          pull: "hardware/cottage/Cottage__Chrome.png",
+          withDoor: "hardware/cottage/Cottage__Chrome_with_knob.png"
+        },
       },
     },
     loft: {
       name: "Loft",
+      description: "Sleek industrial-inspired pulls. The perfect choice for modern and urban kitchen designs.",
+      sizes: ["Knob: 15/16\"", "Pull: 4 5/8\" lengths", "Pull: 5 7/8\" lengths"],
       finishes: {
-        rose_gold: "hardware/loft/Loft_RoseGold.png",
-        satin_nickel: "hardware/loft/Loft_SatinNickel.png",
-        matte_black: "hardware/loft/Loft_MatteBlack.png",
-        chrome: "hardware/loft/Loft_Chrome_1.png.png",
+        rose_gold: { 
+          pull: "hardware/loft/Loft_RoseGold.png",
+          withDoor: "hardware/loft/Loft_RoseGold_with_knob.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/loft/Loft_SatinNickel.png",
+          withDoor: "hardware/loft/Loft_SatinNickel_with_knob.png"
+        },
+        matte_black: { 
+          pull: "hardware/loft/Loft_MatteBlack.png",
+          withDoor: "hardware/loft/Loft_MatteBlack__with_knob.png"
+        },
+        chrome: { 
+          pull: "hardware/loft/Loft_Chrome_1.png.png",
+          withDoor: "hardware/loft/Loft_Chrome_with_knob.png"
+        },
       },
     },
     square: {
       name: "Square",
+      description: "Bold geometric hardware with clean lines. Makes a statement in contemporary and minimalist kitchens.",
+      sizes: ["Knob: 15/16\"", "Pull: 4 1/4\" lengths", "Pull: 5 7/16\" lengths"],
       finishes: {
-        rose_gold: "hardware/square/Square_RoseGold.png",
-        satin_nickel: "hardware/square/Square_SatinNickel.png",
-        matte_black: "hardware/square/Square_MatteBlack.png",
-        chrome: "hardware/square/Square_chrome.png",
+        rose_gold: { 
+          pull: "hardware/square/Square_RoseGold.png",
+          withDoor: "hardware/square/Square_RoseGold_with_knob.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/square/Square_SatinNickel.png",
+          withDoor: "hardware/square/Square_SatinNickel__with_knob.png"
+        },
+        matte_black: { 
+          pull: "hardware/square/Square_MatteBlack.png",
+          withDoor: "hardware/square/Square_MatteBlack__with_knob.png"
+        },
+        chrome: { 
+          pull: "hardware/square/Square_chrome.png",
+          withDoor: "hardware/square/Square_chrome__with_knob.png"
+        },
+      },
+    },
+    bar: {
+      name: "Bar",
+      description: "Classic bar pulls with a timeless appeal. Versatile enough for any kitchen style.",
+      sizes: ["Knob: Round", "Pull: 4.5\" lengths", "Pull: 6\" lengths"],
+      finishes: {
+        matte_black: { 
+          pull: "hardware/bar/Bar-pulls-black .png",
+          withDoor: "hardware/bar/Bar-matte-black-tpull.png"
+        },
+        satin_nickel: { 
+          pull: "hardware/bar/BarPull_SatinNickel.png",
+          withDoor: "hardware/bar/BarPull_SatinNickel_with_tpull.png"
+        },
       },
     },
   },
@@ -321,80 +396,140 @@ export function CabinetConfigurator() {
             <p className="text-zinc-400 max-w-2xl mx-auto">Choose from our curated collection of premium hardware finishes to complete your look.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Hardware Type Selection */}
-            <div className="bg-zinc-900 rounded-2xl border border-white/5 p-6">
-              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-6">Hardware Style</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {Object.entries(CONFIG_DATA.hardware).map(([id, data]) => (
-                  <button
-                    key={id}
-                    onClick={() => handleHwTypeChange(id)}
-                    className={cn(
-                      "relative p-4 rounded-xl text-center transition-all duration-200 border-2",
-                      hwType === id
-                        ? "bg-white text-zinc-900 border-white shadow-lg shadow-white/20"
-                        : "bg-white/5 text-zinc-300 border-transparent hover:bg-white/10 hover:text-white hover:border-white/20"
-                    )}
-                  >
-                    <div className="h-16 flex items-center justify-center mb-3">
-                      <Image
-                        src={`/cabs_clean/${Object.values(data.finishes)[0]}`}
-                        alt={data.name}
-                        width={60}
-                        height={60}
-                        className={cn(
-                          "object-contain transition-all",
-                          hwType === id ? "" : "opacity-60"
-                        )}
-                      />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-wider">{data.name}</span>
-                  </button>
-                ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* LEFT: Hardware Style Selection Cards */}
+            <div className="lg:col-span-5 space-y-4">
+              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-4">Hardware Style</h3>
+              <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                {Object.entries(CONFIG_DATA.hardware).map(([id, data]) => {
+                  const isSelected = hwType === id
+                  const firstFinishData = Object.values(data.finishes)[0]
+                  return (
+                    <button
+                      key={id}
+                      onClick={() => handleHwTypeChange(id)}
+                      className={cn(
+                        "w-full relative p-4 rounded-xl text-left transition-all duration-200 border-2",
+                        isSelected
+                          ? "bg-zinc-800 border-orange-500"
+                          : "bg-zinc-900/50 border-white/5 hover:border-white/20"
+                      )}
+                    >
+                      <div className="flex items-start gap-4">
+                        {/* Hardware Preview Image */}
+                        <div className="w-20 h-20 rounded-lg bg-zinc-800/80 flex items-center justify-center flex-shrink-0">
+                          <Image
+                            src={`/cabs_clean/${firstFinishData.pull}`}
+                            alt={data.name}
+                            width={60}
+                            height={60}
+                            className="object-contain"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className={cn(
+                            "font-bold text-base mb-1",
+                            isSelected ? "text-orange-400" : "text-white"
+                          )}>
+                            {data.name}
+                          </h4>
+                          <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2">{data.description}</p>
+                          {/* Finish Swatches */}
+                          <div className="flex gap-1.5 mt-3">
+                            {Object.entries(data.finishes).map(([finish]) => (
+                              <div
+                                key={finish}
+                                className="w-5 h-5 rounded-full border border-white/20 shadow-sm"
+                                style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
+                                title={FINISH_NAMES[finish]}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  )
+                })}
               </div>
             </div>
 
-            {/* Hardware Finish Selection */}
-            <div className="bg-zinc-900 rounded-2xl border border-white/5 p-6">
-              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-6">Finish for {currentHw.name}</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {Object.entries(currentHw.finishes).map(([finish, path]) => (
-                  <button
-                    key={finish}
-                    onClick={() => setHwFinish(finish)}
-                    className={cn(
-                      "group relative p-4 rounded-xl transition-all duration-200 border-2",
-                      hwFinish === finish
-                        ? "bg-orange-600/20 border-orange-500"
-                        : "bg-white/5 border-transparent hover:bg-white/10 hover:border-white/20"
-                    )}
+            {/* RIGHT: Large Preview + Finish Selection */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Large Door with Hardware Preview */}
+              <div className="relative aspect-[4/3] bg-zinc-900 rounded-2xl border border-white/5 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${hwType}-${hwFinish}`}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0"
                   >
-                    <div className="flex items-center gap-4">
-                      <div
-                        className={cn(
-                          "w-12 h-12 rounded-full border-2 shadow-lg flex-shrink-0",
-                          hwFinish === finish ? "border-orange-500" : "border-white/20"
-                        )}
-                        style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
-                      />
-                      <div className="text-left">
-                        <p className="font-bold text-sm">{FINISH_NAMES[finish] || finish}</p>
-                        <p className="text-xs text-zinc-500">Premium finish</p>
+                    <Image
+                      src={`/cabs_clean/${currentHw.finishes[hwFinish]?.withDoor || currentHw.finishes[hwFinish]?.pull}`}
+                      alt={`${currentHw.name} in ${FINISH_NAMES[hwFinish]}`}
+                      fill
+                      className="object-contain p-8"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Hardware Info Badge */}
+                <div className="absolute top-4 left-4 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
+                  <span className="text-xs font-bold uppercase tracking-wider">{currentHw.name} · {FINISH_NAMES[hwFinish]}</span>
+                </div>
+              </div>
+
+              {/* Finish Selection Grid */}
+              <div className="bg-zinc-900/50 rounded-xl p-4 border border-white/5">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                    Available Finishes
+                  </p>
+                  <p className="text-xs text-zinc-500">
+                    {Object.keys(currentHw.finishes).length} options
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {Object.entries(currentHw.finishes).map(([finish, finishData]) => (
+                    <button
+                      key={finish}
+                      onClick={() => setHwFinish(finish)}
+                      className={cn(
+                        "group relative p-3 rounded-xl transition-all duration-200 border-2",
+                        hwFinish === finish
+                          ? "bg-orange-600/20 border-orange-500"
+                          : "bg-zinc-800/50 border-transparent hover:bg-zinc-800 hover:border-white/20"
+                      )}
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        <div
+                          className={cn(
+                            "w-10 h-10 rounded-full border-2 shadow-lg",
+                            hwFinish === finish ? "border-orange-500 scale-110" : "border-white/20"
+                          )}
+                          style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
+                        />
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-center">
+                          {FINISH_NAMES[finish] || finish}
+                        </span>
                       </div>
-                    </div>
-                    {/* Preview Image */}
-                    <div className="mt-4 h-20 flex items-center justify-center bg-zinc-800/50 rounded-lg">
-                      <Image
-                        src={`/cabs_clean/${path}`}
-                        alt={`${FINISH_NAMES[finish]} ${currentHw.name}`}
-                        width={80}
-                        height={80}
-                        className="object-contain drop-shadow-lg"
-                      />
-                    </div>
-                  </button>
-                ))}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Available Sizes */}
+              <div className="bg-zinc-800/30 rounded-xl p-4 border border-white/5">
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-3">Available Sizes</p>
+                <div className="flex flex-wrap gap-2">
+                  {currentHw.sizes?.map((size: string, idx: number) => (
+                    <span key={idx} className="px-3 py-1.5 bg-zinc-800 rounded-full text-xs font-medium text-zinc-300 border border-white/5">
+                      {size}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
