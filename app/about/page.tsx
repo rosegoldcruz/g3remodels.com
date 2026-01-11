@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const heroImageSrc = "/minimalist-contemporary-kitchen-sleek-handleless-c.jpg"
 const detailImageSrc = "/ultra-modern-slim-profile-kitchen-cabinets-floatin.jpg"
@@ -123,7 +124,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-28 border-y border-border/40">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">A Controlled Process</h2>
-          <div className="mt-10">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
               {
                 title: "Consultation",
@@ -142,10 +143,14 @@ export default function AboutPage() {
                 desc: "Details are checked. Standards are met. The space is delivered complete.",
               },
             ].map((step) => (
-              <div key={step.title} className="grid gap-4 py-8 md:grid-cols-2 border-t border-border/40 first:border-t-0">
-                <div className="text-base md:text-lg font-medium tracking-tight">{step.title}</div>
-                <div className="text-sm md:text-base text-muted-foreground leading-relaxed">{step.desc}</div>
-              </div>
+              <Card key={step.title} className="rounded-none border-border/40">
+                <CardHeader className="pb-0">
+                  <CardTitle className="text-base md:text-lg tracking-tight">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

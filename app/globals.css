@@ -123,3 +123,28 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #a3a3a3;
 }
+
+/* Utility for 3D transform contexts used by interactive cards */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.comet-perspective {
+  perspective: 1200px;
+}
+
+.comet-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.comet-image-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 6px 0px;
+}
+
+.comet-motion-surface {
+  transform-style: preserve-3d;
+  box-shadow: rgba(0, 0, 0, 0.01) 0px 520px 146px 0px,
+    rgba(0, 0, 0, 0.04) 0px 333px 133px 0px,
+    rgba(0, 0, 0, 0.26) 0px 83px 83px 0px,
+    rgba(0, 0, 0, 0.29) 0px 21px 46px 0px;
+}
