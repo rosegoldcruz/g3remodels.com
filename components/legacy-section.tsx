@@ -55,7 +55,7 @@ export function LegacySection() {
             </span>
             <h3 className="font-serif text-3xl md:text-4xl">Architectural Vision</h3>
             <p className="text-muted-foreground text-lg leading-relaxed font-light max-w-2xl">
-              Principal Todd Gentner leads G3 with an uncompromising standard for detail. 
+              Founder Todd Gentner leads G3 with an uncompromising standard for detail. 
               By merging rigorous construction management with a deep understanding of 
               luxury design, he ensures every renovation is a seamless extension of 
               the homeowner's lifestyle.

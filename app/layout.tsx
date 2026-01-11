@@ -63,8 +63,8 @@ const businessSchema = {
     value: "3",
   },
   areaServed: {
-    "@type": "Country",
-    name: "United States",
+    "@type": "state",
+    name: "arizona",
   },
   serviceType: [
     "Home Remodeling",
