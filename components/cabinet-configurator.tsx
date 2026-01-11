@@ -345,28 +345,28 @@ export function CabinetConfigurator() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="border-b border-white/10 py-6 px-6">
+      <div className="border-b border-zinc-800 py-8 px-6">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-2">Design Studio</p>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tighter">Cabinet Configurator</h1>
+          <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-3">Bespoke Design Studio</p>
+          <h1 className="text-2xl md:text-3xl font-light tracking-wide">Cabinet Configurator</h1>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-7xl mx-auto p-6 lg:p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* LEFT: Visualizer (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Main Kitchen Scene */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] bg-zinc-900">
+            <div className="relative rounded-none overflow-hidden border border-zinc-800 aspect-[16/10] bg-black">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`${style}-${colorKey}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className="absolute inset-0"
                 >
                   <Image
@@ -399,15 +399,15 @@ export function CabinetConfigurator() {
               </AnimatePresence>
 
               {/* Style Badge */}
-              <div className="absolute top-4 left-4 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
-                <span className="text-xs font-bold uppercase tracking-wider">{currentStyle.name}</span>
+              <div className="absolute top-4 left-4 px-4 py-2 bg-black/80 backdrop-blur-sm border border-zinc-800">
+                <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-300">{currentStyle.name}</span>
               </div>
             </div>
 
             {/* Color Selection Thumbnails */}
-            <div className="bg-zinc-900/50 rounded-xl p-4 border border-white/5">
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
-                Available Colors for {currentStyle.name}
+            <div className="bg-zinc-900/30 rounded-none p-5 border border-zinc-800">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4">
+                Available Finishes
               </p>
               <div className="grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 gap-2">
                 {currentStyle.options.map((opt) => (
@@ -419,10 +419,10 @@ export function CabinetConfigurator() {
                       setTimeout(() => setIsLoading(false), 300)
                     }}
                     className={cn(
-                      "group relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200",
+                      "group relative aspect-square rounded-none overflow-hidden border transition-all duration-300",
                       colorKey === opt.id
-                        ? "border-orange-500 scale-105 shadow-lg shadow-orange-500/20"
-                        : "border-transparent hover:border-white/30 opacity-70 hover:opacity-100"
+                        ? "border-white scale-105"
+                        : "border-transparent hover:border-white/40 opacity-60 hover:opacity-100"
                     )}
                   >
                     <Image
@@ -442,12 +442,12 @@ export function CabinetConfigurator() {
 
           {/* RIGHT: Controls (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-zinc-900 rounded-2xl border border-white/5 p-6 space-y-8">
+            <div className="bg-zinc-900/50 rounded-none border border-zinc-800 p-6 space-y-8">
               {/* Step 1: Door Style */}
               <section>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-6 h-6 rounded-full bg-orange-600 text-xs font-black flex items-center justify-center">1</span>
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-zinc-400 font-black">Door Style</h3>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="w-6 h-6 rounded-none bg-white text-black text-xs font-medium flex items-center justify-center">1</span>
+                  <h3 className="text-[10px] uppercase tracking-[0.4em] text-zinc-500">Door Style</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(CONFIG_DATA.doorStyles).map(([id, data]) => (
@@ -455,10 +455,10 @@ export function CabinetConfigurator() {
                       key={id}
                       onClick={() => handleStyleChange(id)}
                       className={cn(
-                        "px-4 py-2.5 rounded-lg text-xs font-bold transition-all duration-200",
+                        "px-5 py-3 rounded-none text-xs font-medium uppercase tracking-wider transition-all duration-300 border",
                         style === id
-                          ? "bg-orange-600 text-white shadow-lg shadow-orange-600/30"
-                          : "bg-white/5 text-zinc-300 hover:bg-white/10 hover:text-white"
+                          ? "bg-white text-black border-white"
+                          : "bg-transparent text-zinc-400 border-zinc-700 hover:border-white hover:text-white"
                       )}
                     >
                       {data.name}
@@ -468,16 +468,16 @@ export function CabinetConfigurator() {
               </section>
 
               {/* Summary */}
-              <div className="bg-zinc-800/50 rounded-xl p-4 border border-white/5">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-3">Cabinet Selection</p>
-                <div className="space-y-2 text-sm">
+              <div className="bg-black/50 rounded-none p-5 border border-zinc-800">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4">Your Selection</p>
+                <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-zinc-400">Style</span>
-                    <span className="font-semibold">{currentStyle.name}</span>
+                    <span className="text-zinc-500 text-xs uppercase tracking-wider">Style</span>
+                    <span className="font-light text-white">{currentStyle.name}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-zinc-400">Color</span>
-                    <span className="font-semibold">{currentColor.color}</span>
+                    <span className="text-zinc-500 text-xs uppercase tracking-wider">Finish</span>
+                    <span className="font-light text-white">{currentColor.color}</span>
                   </div>
                 </div>
               </div>
@@ -486,17 +486,17 @@ export function CabinetConfigurator() {
         </div>
 
         {/* HARDWARE CONFIGURATOR - Separate Section */}
-        <div className="mt-16 border-t border-white/10 pt-16">
-          <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-zinc-500 mb-3">Step 2</p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Select Your Hardware</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">Choose from our curated collection of premium hardware finishes to complete your look.</p>
+        <div className="mt-20 border-t border-zinc-800 pt-20">
+          <div className="text-center mb-16">
+            <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4">Step 2</p>
+            <h2 className="text-2xl md:text-3xl font-light tracking-wide mb-4">Select Your Hardware</h2>
+            <p className="text-zinc-500 text-sm max-w-xl mx-auto font-light">Curated finishes to complete your vision.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* LEFT: Hardware Style Selection Cards */}
             <div className="lg:col-span-5 space-y-4">
-              <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-400 font-black mb-4">Hardware Style</h3>
+              <h3 className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-6">Hardware Style</h3>
               <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                 {Object.entries(CONFIG_DATA.hardware).map(([id, data]) => {
                   const isSelected = hwType === id
@@ -506,15 +506,15 @@ export function CabinetConfigurator() {
                       key={id}
                       onClick={() => handleHwTypeChange(id)}
                       className={cn(
-                        "w-full relative p-4 rounded-xl text-left transition-all duration-200 border-2",
+                        "w-full relative p-5 rounded-none text-left transition-all duration-300 border",
                         isSelected
-                          ? "bg-zinc-800 border-orange-500"
-                          : "bg-zinc-900/50 border-white/5 hover:border-white/20"
+                          ? "bg-zinc-900 border-white"
+                          : "bg-zinc-900/30 border-zinc-800 hover:border-zinc-600"
                       )}
                     >
                       <div className="flex items-start gap-4">
                         {/* Hardware Preview Image */}
-                        <div className="w-20 h-20 rounded-lg bg-zinc-800/80 flex items-center justify-center flex-shrink-0">
+                        <div className="w-20 h-20 rounded-none bg-zinc-900 flex items-center justify-center flex-shrink-0 border border-zinc-800">
                           <Image
                             src={`/cabs_clean/${firstFinishData.pull}`}
                             alt={data.name}
@@ -525,8 +525,8 @@ export function CabinetConfigurator() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className={cn(
-                            "font-bold text-base mb-1",
-                            isSelected ? "text-orange-400" : "text-white"
+                            "font-medium text-base mb-1 tracking-wide",
+                            isSelected ? "text-white" : "text-zinc-300"
                           )}>
                             {data.name}
                           </h4>
@@ -553,38 +553,38 @@ export function CabinetConfigurator() {
             {/* RIGHT: Large Preview + Finish Selection */}
             <div className="lg:col-span-7 space-y-6">
               {/* Large Door with Hardware Preview */}
-              <div className="relative aspect-[4/3] bg-zinc-900 rounded-2xl border border-white/5 overflow-hidden">
+              <div className="relative aspect-[4/3] bg-black rounded-none border border-zinc-800 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`${hwType}-${hwFinish}`}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                     className="absolute inset-0"
                   >
                     <Image
                       src={`/cabs_clean/${currentHw.finishes[hwFinish]?.withDoor || currentHw.finishes[hwFinish]?.pull}`}
                       alt={`${currentHw.name} in ${FINISH_NAMES[hwFinish]}`}
                       fill
-                      className="object-contain p-8"
+                      className="object-contain p-10"
                     />
                   </motion.div>
                 </AnimatePresence>
                 
                 {/* Hardware Info Badge */}
-                <div className="absolute top-4 left-4 px-4 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
-                  <span className="text-xs font-bold uppercase tracking-wider">{currentHw.name} · {FINISH_NAMES[hwFinish]}</span>
+                <div className="absolute top-4 left-4 px-4 py-2 bg-black/80 backdrop-blur-sm border border-zinc-800">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-300">{currentHw.name} · {FINISH_NAMES[hwFinish]}</span>
                 </div>
               </div>
 
               {/* Finish Selection Grid */}
-              <div className="bg-zinc-900/50 rounded-xl p-4 border border-white/5">
+              <div className="bg-zinc-900/30 rounded-none p-5 border border-zinc-800">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
                     Available Finishes
                   </p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-[10px] text-zinc-600">
                     {Object.keys(currentHw.finishes).length} options
                   </p>
                 </div>
@@ -594,17 +594,17 @@ export function CabinetConfigurator() {
                       key={finish}
                       onClick={() => setHwFinish(finish)}
                       className={cn(
-                        "group relative p-3 rounded-xl transition-all duration-200 border-2",
+                        "group relative p-4 rounded-none transition-all duration-300 border",
                         hwFinish === finish
-                          ? "bg-orange-600/20 border-orange-500"
-                          : "bg-zinc-800/50 border-transparent hover:bg-zinc-800 hover:border-white/20"
+                          ? "bg-zinc-800 border-white"
+                          : "bg-zinc-900/50 border-zinc-800 hover:border-zinc-600"
                       )}
                     >
                       <div className="flex flex-col items-center gap-2">
                         <div
                           className={cn(
-                            "w-10 h-10 rounded-full border-2 shadow-lg",
-                            hwFinish === finish ? "border-orange-500 scale-110" : "border-white/20"
+                            "w-10 h-10 rounded-full border-2",
+                            hwFinish === finish ? "border-white scale-110" : "border-zinc-600"
                           )}
                           style={{ backgroundColor: FINISH_COLORS[finish] || "#666" }}
                         />
@@ -618,12 +618,12 @@ export function CabinetConfigurator() {
               </div>
 
               {/* Available Sizes - Image Gallery */}
-              <div className="bg-zinc-800/30 rounded-xl p-4 border border-white/5">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">Available Sizes for {FINISH_NAMES[hwFinish]}</p>
+              <div className="bg-zinc-900/30 rounded-none p-5 border border-zinc-800">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4">Available Sizes — {FINISH_NAMES[hwFinish]}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {currentHw.finishes[hwFinish]?.sizeImages?.map((sizeItem: { size: string; image: string }, idx: number) => (
                     <div key={idx} className="group relative">
-                      <div className="aspect-square bg-zinc-900 rounded-lg overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all">
+                      <div className="aspect-square bg-black rounded-none overflow-hidden border border-zinc-800 hover:border-white/50 transition-all duration-300">
                         <Image
                           src={`/cabs_clean/${sizeItem.image}`}
                           alt={`${currentHw.name} ${FINISH_NAMES[hwFinish]} - ${sizeItem.size}`}
@@ -640,30 +640,30 @@ export function CabinetConfigurator() {
           </div>
 
           {/* Final Summary & CTA */}
-          <div className="mt-12 bg-gradient-to-r from-zinc-900 to-zinc-800 rounded-2xl border border-white/10 p-8">
+          <div className="mt-16 bg-black border border-zinc-800 p-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="md:col-span-2">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">Your Complete Selection</p>
-                <div className="flex flex-wrap gap-6">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-6">Your Complete Selection</p>
+                <div className="flex flex-wrap gap-8">
                   <div>
-                    <p className="text-xs text-zinc-500">Cabinet Style</p>
-                    <p className="text-lg font-bold">{currentStyle.name}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-600 mb-1">Door Style</p>
+                    <p className="text-lg font-light text-white">{currentStyle.name}</p>
                   </div>
-                  <div className="w-px bg-white/10" />
+                  <div className="w-px bg-zinc-800" />
                   <div>
-                    <p className="text-xs text-zinc-500">Color</p>
-                    <p className="text-lg font-bold">{currentColor.color}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-600 mb-1">Finish</p>
+                    <p className="text-lg font-light text-white">{currentColor.color}</p>
                   </div>
-                  <div className="w-px bg-white/10" />
+                  <div className="w-px bg-zinc-800" />
                   <div>
-                    <p className="text-xs text-zinc-500">Hardware</p>
-                    <p className="text-lg font-bold">{currentHw.name} · {FINISH_NAMES[hwFinish]}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-600 mb-1">Hardware</p>
+                    <p className="text-lg font-light text-white">{currentHw.name} · {FINISH_NAMES[hwFinish]}</p>
                   </div>
                 </div>
               </div>
               <div>
-                <button className="w-full py-4 bg-orange-600 hover:bg-orange-500 text-white font-black rounded-xl transition-all duration-200 shadow-xl shadow-orange-900/30 uppercase tracking-wider text-sm">
-                  Get a Quote
+                <button className="w-full py-4 bg-red-700 hover:bg-red-600 text-white font-medium rounded-none transition-all duration-300 uppercase tracking-[0.2em] text-sm border border-red-600">
+                  Request Consultation
                 </button>
               </div>
             </div>

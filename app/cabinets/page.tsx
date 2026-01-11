@@ -20,7 +20,7 @@ export default function CabinetsPage() {
             priority
         />
         <div className="relative z-10 text-center text-white px-6 max-w-5xl">
-            <p className="text-sm md:text-base uppercase tracking-[0.3em] text-orange-500 font-bold mb-6">
+            <p className="text-sm md:text-base uppercase tracking-[0.3em] text-red-600 font-medium mb-6">
                 The Smarter Kitchen Upgrade
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
@@ -33,17 +33,17 @@ export default function CabinetsPage() {
                 Our refacing process gives you custom-crafted doors and premium hardware at a fraction of the cost of a traditional remodel. Save your time. Spend your style.
             </p>
             <div className="flex flex-wrap justify-center gap-8 mt-10 text-left">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 w-64">
-                    <p className="text-3xl font-bold text-orange-500 mb-1">50%</p>
-                    <p className="text-sm text-white/70">Less than full replacement cost</p>
+                <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-none p-6 w-64">
+                    <p className="text-3xl font-light text-white mb-1">50%</p>
+                    <p className="text-xs uppercase tracking-widest text-white/50">Less than full replacement</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 w-64">
-                    <p className="text-3xl font-bold text-orange-500 mb-1">3-5 Days</p>
-                    <p className="text-sm text-white/70">Average project completion</p>
+                <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-none p-6 w-64">
+                    <p className="text-3xl font-light text-white mb-1">3-5 Days</p>
+                    <p className="text-xs uppercase tracking-widest text-white/50">Average completion</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 w-64">
-                    <p className="text-3xl font-bold text-orange-500 mb-1">Zero</p>
-                    <p className="text-sm text-white/70">Demo dust & kitchen downtime</p>
+                <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-none p-6 w-64">
+                    <p className="text-3xl font-light text-white mb-1">Zero</p>
+                    <p className="text-xs uppercase tracking-widest text-white/50">Demo dust & downtime</p>
                 </div>
             </div>
         </div>
