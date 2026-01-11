@@ -8,43 +8,15 @@ import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { X, ZoomIn } from "lucide-react"
 
-// Generate numbered items
+// Only numbered images from public folder
 const numberIds = [
-    ...Array.from({ length: 26 }, (_, i) => i + 1), // 1-26
-    ...Array.from({ length: 8 }, (_, i) => i + 28), // 28-35
-    38, 39, 41, 43, 44
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25, 26, 28, 29, 30, 31,
+  32, 33, 34, 35, 38, 39, 41, 42, 43, 44
 ]
 
-const namedImages = [
-    "luxury-3d-structural-refacing-kitchen-modern-archi.jpg",
-    "luxury-desert-estate-panoramic-view-with-golf-cour.jpg",
-    "luxury-estate-home-exterior-modern-architecture-de.jpg",
-    "luxury-fusion-style-kitchen-combining-modern-and-t.jpg",
-    "luxury-home-community-aerial-view-modern-houses-de.jpg",
-    "luxury-home-construction-blueprint-architectural-p.jpg",
-    "luxury-home-construction-site-modern-building-prog.jpg",
-    "luxury-home-interior-living-room-modern-furniture-.jpg",
-    "luxury-home-renovation-modern-kitchen-remodel-high.jpg",
-    "luxury-infinity-pool-night-time-modern-desert-home.jpg",
-    "luxury-modern-home-exterior-desert-landscape-archi.jpg",
-    "luxury-modern-interior-living-room-open-concept-hi.jpg",
-    "luxury-modern-kitchen-with-white-marble-countertop.jpg",
-    "luxury-shaker-style-kitchen-cabinets-3d-architectu.jpg",
-    "luxury-transitional-kitchen-blending-classic-and-c.jpg",
-    "minimalist-contemporary-kitchen-sleek-handleless-c.jpg",
-    "modern-architectural-kitchen-with-integrated-slidi.jpg",
-    "modern-luxury-interior-design-living-room-contempo.jpg",
-    "modern-sliding-panel-kitchen-system-hidden-storage.jpg",
-    "sleek-minimalist-slab-front-kitchen-cabinets-handl.jpg",
-    "transitional-kitchen-cabinets-blending-modern-and-.jpg",
-    "ultra-modern-slim-profile-kitchen-cabinets-floatin.jpg",
-    "ultra-thin-profile-kitchen-cabinets-floating-desig.jpg"
-]
-
-const allImages = [
-    ...namedImages.map(src => ({ src: `/${src}`, type: "featured" })),
-    ...numberIds.map(id => ({ src: `/${id}.jpeg`, type: "standard" }))
-]
+const allImages = numberIds.map(id => ({ src: `/${id}.jpeg`, type: "standard" }))
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -74,7 +46,7 @@ export default function GalleryPage() {
                         src={img.src}
                         alt="Gallery Image"
                         width={600}
-                        height={800} // Aspect ratio approximation
+                        height={800}
                         className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                     />
