@@ -110,11 +110,13 @@ export default function AboutPage() {
                 desc: "We build for permanence, not trends.",
               },
             ].map((item) => (
-              <div key={item.title} className="border border-border/40 p-6">
-                <div className="h-px w-10 bg-border" />
-                <h3 className="mt-6 text-lg font-medium tracking-tight">{item.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
+              <CometCard key={item.title} rotateDepth={12} translateDepth={16} className="w-full">
+                <div className="w-full rounded-2xl border border-border/40 bg-card p-6">
+                  <div className="h-px w-10 bg-border" />
+                  <h3 className="mt-6 text-lg font-medium tracking-tight text-card-foreground">{item.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </CometCard>
             ))}
           </div>
         </div>
