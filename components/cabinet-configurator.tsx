@@ -564,7 +564,7 @@ export function CabinetConfigurator() {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={`/cabs_clean/${currentHw.finishes[hwFinish]?.withDoor || currentHw.finishes[hwFinish]?.pull}`}
+                      src={`/cabs_clean/${currentHwFinish?.withDoor || currentHwFinish?.pull}`}
                       alt={`${currentHw.name} in ${FINISH_NAMES[hwFinish]}`}
                       fill
                       className="object-contain p-10"
@@ -621,7 +621,7 @@ export function CabinetConfigurator() {
               <div className="bg-zinc-900/30 rounded-none p-5 border border-zinc-800">
                 <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-4">Available Sizes — {FINISH_NAMES[hwFinish]}</p>
                 <div className="grid grid-cols-3 gap-3">
-                  {currentHw.finishes[hwFinish]?.sizeImages?.map((sizeItem: { size: string; image: string }, idx: number) => (
+                  {currentHwFinish?.sizeImages?.map((sizeItem: { size: string; image: string }, idx: number) => (
                     <div key={idx} className="group relative">
                       <div className="aspect-square bg-black rounded-none overflow-hidden border border-zinc-800 hover:border-white/50 transition-all duration-300">
                         <Image
