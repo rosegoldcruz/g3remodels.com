@@ -12,7 +12,7 @@ import { X, ZoomIn } from "lucide-react"
 const numberIds = [
     ...Array.from({ length: 26 }, (_, i) => i + 1), // 1-26
     ...Array.from({ length: 8 }, (_, i) => i + 28), // 28-35
-    38, 39, 40, 41, 43, 44
+    38, 39, 41, 43, 44
 ]
 
 const namedImages = [
