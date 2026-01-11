@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CometCard } from "@/components/ui/comet-card"
 
 const heroImageSrc = "/minimalist-contemporary-kitchen-sleek-handleless-c.jpg"
 const detailImageSrc = "/ultra-modern-slim-profile-kitchen-cabinets-floatin.jpg"
@@ -143,14 +143,12 @@ export default function AboutPage() {
                 desc: "Details are checked. Standards are met. The space is delivered complete.",
               },
             ].map((step) => (
-              <Card key={step.title} className="rounded-none border-border/40">
-                <CardHeader className="pb-0">
-                  <CardTitle className="text-base md:text-lg tracking-tight">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
-                </CardContent>
-              </Card>
+              <CometCard key={step.title} rotateDepth={14} translateDepth={18} className="w-full">
+                <div className="w-full rounded-2xl border border-border/40 bg-card p-6">
+                  <div className="text-base md:text-lg font-medium tracking-tight text-card-foreground">{step.title}</div>
+                  <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+              </CometCard>
             ))}
           </div>
         </div>
