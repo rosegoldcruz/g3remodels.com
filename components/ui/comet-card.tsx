@@ -55,6 +55,7 @@ export const CometCard = ({
   const glareY = useTransform(mouseYSpring, [-0.5, 0.5], [0, 100]);
 
   const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.75) 20%, rgba(255, 255, 255, 0) 80%)`;
+  const cometBackground = useMotionTemplate`radial-gradient(120px 120px at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.0) 70%)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -99,15 +100,36 @@ export const CometCard = ({
         }}
         className="relative rounded-2xl comet-motion-surface"
       >
-        {children}
-        <motion.div
-          className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
-          style={{
-            background: glareBackground,
-            opacity: 0.6,
-          }}
-          transition={{ duration: 0.2 }}
-        />
+        {/* Surface */}
+        <div className="relative rounded-2xl overflow-hidden transform-3d">
+          {/* Subtle border sheen */}
+          <div className="pointer-events-none absolute inset-0 rounded-2xl comet-border" />
+
+          {/* The content provided by the caller */}
+          <div className="relative z-10 transform-3d comet-z-28">
+            {children}
+          </div>
+
+          {/* Comet highlight (tight, bright) */}
+          <motion.div
+            className="pointer-events-none absolute inset-0 z-30 rounded-2xl comet-blend-screen comet-z-40"
+            style={{
+              background: cometBackground,
+              opacity: 0.75,
+            }}
+            transition={{ duration: 0.15 }}
+          />
+
+          {/* Wide glare (soft) */}
+          <motion.div
+            className="pointer-events-none absolute inset-0 z-40 h-full w-full rounded-2xl mix-blend-overlay comet-z-60"
+            style={{
+              background: glareBackground,
+              opacity: 0.55,
+            }}
+            transition={{ duration: 0.15 }}
+          />
+        </div>
       </motion.div>
     </div>
   );

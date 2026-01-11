@@ -148,3 +148,27 @@ html {
     rgba(0, 0, 0, 0.26) 0px 83px 83px 0px,
     rgba(0, 0, 0, 0.29) 0px 21px 46px 0px;
 }
+
+.comet-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.comet-z-28 {
+  transform: translateZ(28px);
+}
+
+.comet-z-40 {
+  transform: translateZ(40px);
+}
+
+.comet-z-60 {
+  transform: translateZ(60px);
+}
+
+.comet-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.comet-demo-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 6px 0px;
+}
