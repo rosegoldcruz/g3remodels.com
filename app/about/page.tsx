@@ -13,18 +13,25 @@ import {
 } from "@/components/about-components";
 
 // --- Data ---
-const industryStandards = [
-  { title: "Precision", desc: "Every pixel is calculated. We do not rely on guesswork." },
-  { title: "Durability", desc: "Built to withstand the shifts in digital landscapes." },
-  { title: "Aesthetics", desc: "Beauty is a function of purpose, not just decoration." },
-  { title: "Velocity", desc: "Optimized performance delivered at the speed of thought." },
+const coreValues = [
+  { title: "Craftsmanship", desc: "Every detail matters. We don't cut corners or compromise on quality." },
+  { title: "Trust", desc: "Building relationships through transparency and honest communication." },
+  { title: "Precision", desc: "Surgical accuracy in every cut, joint, and finish." },
+  { title: "Legacy", desc: "Creating spaces that become part of your family's story." },
+];
+
+const processSteps = [
+  { step: "Consultation", desc: "We listen to your vision and assess your space with no obligation." },
+  { step: "Design Phase", desc: "Custom blueprints and material selections tailored to your home." },
+  { step: "Installation", desc: "Expert craftsmanship with minimal disruption to your daily life." },
+  { step: "Final Touches", desc: "Quality inspection and finishing work that exceeds expectations." },
 ];
 
 const faqData = [
-  { q: "What is your design philosophy?", a: "We believe in subtraction. We remove the non-essential until only the pure function and form remain." },
-  { q: "How do you handle project timelines?", a: "Our timelines are rigid yet realistic. We operate in two-week sprints with transparent deliverables." },
-  { q: "Do you offer post-launch support?", a: "Yes. A digital product is a living organism. We provide ongoing care packages to ensure health." },
-  { q: "What technologies do you prefer?", a: "We are agnostic, but we lean heavily towards React ecosystems and edge-ready frameworks." },
+  { q: "How long does a typical kitchen refacing take?", a: "Most refacing projects are completed in 3-5 days. Full remodels vary by scope but we work efficiently to minimize disruption." },
+  { q: "Do you work in all Arizona areas?", a: "We proudly serve the entire Phoenix metropolitan area, including Scottsdale, Paradise Valley, Cave Creek, and surrounding communities." },
+  { q: "What's the difference between refacing and replacement?", a: "Refacing saves 50%+ on cost while giving you premium results. We reuse your existing cabinets and only replace doors, drawers, and hardware." },
+  { q: "Do you offer financing?", a: "Yes, we work with trusted financing partners to make premium remodeling accessible. We can discuss options during your consultation." },
 ];
 
 export default function AboutPage() {
@@ -58,7 +65,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative z-10 text-center text-white">
-          <StaggeredText text="ABOUT THE FIRM" className="text-7xl md:text-9xl font-bold tracking-tighter" />
+          <StaggeredText text="ABOUT G3 CONTRACTING" className="text-7xl md:text-9xl font-bold tracking-tighter" />
         </div>
       </section>
 
@@ -67,10 +74,10 @@ export default function AboutPage() {
         <FadeIn>
           <h2 className="text-sm font-bold tracking-widest text-neutral-500 mb-6 uppercase">Our Story</h2>
           <p className="text-2xl md:text-3xl font-light leading-tight mb-6">
-            We started with a simple premise: Digital spaces should feel as permanent and crafted as physical architecture.
+            Founded in 2003, we've built our reputation on one principle: Treat every home like our own.
           </p>
           <p className="text-neutral-600 leading-relaxed">
-            Founded in 2003, our team combines the discipline of traditional engineering with the fluidity of modern art. We don't just build websites; we construct digital legacies.
+            What started as a small family business has grown into Arizona's trusted name for premium kitchen remodeling and cabinet refacing. We don't chase volume—we focus on doing it right, every time. Our master craftsmen bring decades of combined experience to transform your space while preserving the integrity of your home.
           </p>
         </FadeIn>
 
@@ -85,12 +92,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Industry Standards */}
+      {/* 4. Core Values */}
       <section className="bg-neutral-50 py-24 border-y border-neutral-200">
         <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-sm font-bold tracking-widest text-neutral-500 mb-12 uppercase">Standards</h2>
+            <h2 className="text-sm font-bold tracking-widest text-neutral-500 mb-12 uppercase">Core Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {industryStandards.map((item, i) => (
+            {coreValues.map((item, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
                     <MagicCard title={item.title} desc={item.desc} />
                 </FadeIn>
@@ -99,18 +106,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Quality & Materials */}
+      {/* 5. Our Process */}
       <div className="max-w-7xl mx-auto px-6 py-32 space-y-32">
-        {[
-            { tag: "Materials", title: "Code as Concrete", desc: "We use TypeScript as our rebar. Strong, typed, and unyielding." },
-            { tag: "Control", title: "Pixel Perfect", desc: "Automated regression testing ensures that nothing moves unless we tell it to." },
-            { tag: "Services", title: "Holistic Design", desc: "From the first wireframe to the final deployment, we own the process." }
-        ].map((section, i) => (
+        {processSteps.map((step, i) => (
             <FadeIn key={i} className="grid md:grid-cols-2 gap-12 border-t border-neutral-200 pt-12">
-                <div className="text-xl font-medium">{section.tag}</div>
+                <div className="text-xl font-medium">{step.step}</div>
                 <div>
-                    <h3 className="text-4xl font-light mb-4">{section.title}</h3>
-                    <p className="text-neutral-600">{section.desc}</p>
+                    <p className="text-neutral-600">{step.desc}</p>
                 </div>
             </FadeIn>
         ))}
@@ -120,10 +122,10 @@ export default function AboutPage() {
       <section className="bg-neutral-900 py-24 text-center">
         <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-8">
-                Ready to elevate your digital presence?
+                Ready to transform your kitchen?
             </h2>
             <div className="flex justify-center">
-                <ShimmerButton text="Schedule Your Design Consultation" />
+                <ShimmerButton text="Schedule Your Free Consultation" />
             </div>
         </div>
       </section>
@@ -146,9 +148,9 @@ export default function AboutPage() {
                 <FadeIn key={i} delay={i * 0.2} className="space-y-4">
                     <div className="text-2xl text-neutral-900">★★★★★</div>
                     <p className="text-lg text-neutral-600 font-light italic">
-                        "They didn't just build a site, they built a cathedral for our brand. Absolutely stunning work."
+                        "G3 transformed our dated kitchen into something magazine-worthy. The refacing work looks brand new, and the process was surprisingly stress-free."
                     </p>
-                    <p className="text-sm font-bold uppercase">— CEO, TechCorp</p>
+                    <p className="text-sm font-bold uppercase">— Scottsdale Homeowner</p>
                 </FadeIn>
             ))}
         </div>
@@ -158,7 +160,7 @@ export default function AboutPage() {
       <section className="border-t border-neutral-200 py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
              {/* Placeholders for logos */}
-            {['Acme', 'Stark', 'Wayne', 'Cyberdyne', 'Umbrella'].map(logo => (
+            {['Better Business Bureau', 'Arizona Contractors Association', 'Phoenix Home Builder', 'Kitchen & Bath Association', 'Licensed & Insured'].map(logo => (
                 <span key={logo} className="text-2xl font-black text-neutral-300 select-none">{logo}</span>
             ))}
         </div>
@@ -174,9 +176,9 @@ export default function AboutPage() {
              />
         </div>
         <div className="relative z-10 text-center">
-             <h2 className="text-white text-5xl font-light mb-6">Let's Build Something Real.</h2>
+             <h2 className="text-white text-5xl font-light mb-6">Let's Talk About Your Vision.</h2>
              <button className="bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-neutral-200 transition-colors">
-                Start Project
+                Start Your Kitchen Project
              </button>
         </div>
       </section>
