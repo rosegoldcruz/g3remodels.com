@@ -1,7 +1,16 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react"
 import { BrandLogo } from "@/components/brand-logo"
 
 export function Footer() {
+  const [year, setYear] = useState(2026)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   return (
     <footer className="relative bg-background py-20 overflow-hidden">
       {/* Watermark Logo */}
@@ -72,7 +81,7 @@ export function Footer() {
         {/* Copyright and Links */}
         <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground flex items-center justify-center gap-1">
-            Copyright ©{new Date().getFullYear()} <BrandLogo width={16} height={16} className="opacity-50" />. All Rights Reserved.
+            Copyright ©{year} <BrandLogo width={16} height={16} className="opacity-50" />. All Rights Reserved.
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
             <a href="#" className="hover:text-foreground">

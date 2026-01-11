@@ -10,7 +10,7 @@ interface BrandLogoProps {
 
 export function BrandLogo({ className, width = 40, height = 40, variant = "brand" }: BrandLogoProps) {
   return (
-    <div className={cn("relative inline-block align-middle", className)} style={{ width, height }}>
+    <span className={cn("relative inline-block align-middle", className)} style={{ width, height }}>
       <Image
         src="/g3.png"
         alt="G3 Contracting Logo"
@@ -21,6 +21,6 @@ export function BrandLogo({ className, width = 40, height = 40, variant = "brand
         )}
         priority
       />
-    </div>
+    </span>
   )
 }

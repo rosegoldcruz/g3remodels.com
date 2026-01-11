@@ -2,8 +2,9 @@
 
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { IntroSection } from "@/components/intro-section"
-import { StatsSection } from "@/components/stats-section"
+import { LegacySection } from "@/components/legacy-section"
+import { MethodSection } from "@/components/method-section"
+import { ServicesSection } from "@/components/services-section"
 import { LuxuryGallery } from "@/components/luxury-gallery"
 import { Footer } from "@/components/footer"
 
@@ -22,9 +23,9 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <IntroSection />
-      {/* Visual focused flow - straight to visuals and numbers */}
-      <StatsSection />
+      <LegacySection />
+      <MethodSection />
+      <ServicesSection />
       <LuxuryGallery items={galleryItems} />
       <Footer />
     </main>
