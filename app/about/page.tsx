@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Formbutton } from "@/components/formbutton"
 import { Button } from "@/components/ui/button"
 import { CometCard } from "@/components/ui/comet-card"
 
@@ -176,6 +177,7 @@ export default function AboutPage() {
       </section>
 
       <Footer />
+      <Formbutton />
     </main>
   )
 }

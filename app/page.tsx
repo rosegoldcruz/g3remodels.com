@@ -6,6 +6,7 @@ import { LegacySection } from "@/components/legacy-section"
 import { MethodSection } from "@/components/method-section"
 import { ServicesSection } from "@/components/services-section"
 import { Footer } from "@/components/footer"
+import { Formbutton } from "@/components/formbutton"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <MethodSection />
       <ServicesSection />
       <Footer />
+      <Formbutton />
     </main>
   )
 }

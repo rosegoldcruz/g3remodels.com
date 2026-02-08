@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Formbutton } from "@/components/formbutton"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useState } from "react"
@@ -81,6 +82,7 @@ export default function GalleryPage() {
       )}
 
       <Footer />
+      <Formbutton />
     </main>
   )
 }
